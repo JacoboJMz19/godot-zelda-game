@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://ccjwo7lgaxd5"]
+
+[ext_resource type="Script" uid="uid://do15max466fw3" path="res://leever_red.gd" id="1_h7sk0"]
+[ext_resource type="Texture2D" uid="uid://cisdh1tpahxk4" path="res://Assets/02_Overworld_Enemies/Leever_Red.png" id="1_obxgw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_obxgw"]
+radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obxgw"]
+atlas = ExtResource("1_obxgw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gk16g"]
+atlas = ExtResource("1_obxgw")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7sk0"]
+atlas = ExtResource("1_obxgw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57tim"]
+atlas = ExtResource("1_obxgw")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcxee"]
+atlas = ExtResource("1_obxgw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24sg1"]
+atlas = ExtResource("1_obxgw")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs1je"]
+atlas = ExtResource("1_obxgw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61ylw"]
+atlas = ExtResource("1_obxgw")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6s7dm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obxgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gk16g")
+}],
+"loop": 1,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7sk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57tim")
+}],
+"loop": 1,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcxee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24sg1")
+}],
+"loop": 1,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs1je")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61ylw")
+}],
+"loop": 1,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[node name="leever_red" type="CharacterBody2D" unique_id=758752277]
+collision_layer = 4
+script = ExtResource("1_h7sk0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=67155837]
+shape = SubResource("CircleShape2D_obxgw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=180558249]
+sprite_frames = SubResource("SpriteFrames_6s7dm")
+animation = &"walk_up"
+
+[node name="RayCast2D_UP" type="RayCast2D" parent="." unique_id=2114918174]
+target_position = Vector2(0, -14)
+
+[node name="RayCast2D_DOWN" type="RayCast2D" parent="." unique_id=234423321]
+target_position = Vector2(0, 13)
+
+[node name="RayCast2D_LEFT" type="RayCast2D" parent="." unique_id=748545450]
+target_position = Vector2(-12, 0)
+
+[node name="RayCast2D_RIGHT" type="RayCast2D" parent="." unique_id=465333407]
+target_position = Vector2(12, 0)
